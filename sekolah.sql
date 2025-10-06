@@ -41,3 +41,22 @@ VALUES  (1, 'Matematika', 85),
 		(9, 'Matematika', 83), 
 		(10, 'Bahasa Inggris', 92);
 
+--5. Query Data (select)
+SELECT * 
+FROM siswa;
+
+SELECT nama 
+FROM siswa 
+WHERE jurusan = 'IPA';
+
+SELECT siswa.nama, AVG(nilai.nilai) AS rata_nilai
+FROM siswa
+JOIN nilai ON siswa.id = nilai.siswa_id
+GROUP BY siswa.nama
+ORDER BY siswa.nama;
+
+
+--6. Update dan Delete
+update siswa set jurusan = 'IPS' where id=1;
+
+DELETE FROM nilai WHERE id = 1;
